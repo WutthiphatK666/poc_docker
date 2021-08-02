@@ -27,10 +27,22 @@ jobs:
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y%m%d_%H%M%S')"
-      - name: Generate environment variables
+      - name: "Generate environment variables ${current_date}"
         run: echo $current_date
         env:
           current_date: ${{ steps.date.outputs.date }}
+          
+      - name: Generate report $current_date
+        run: echo "${current_date}"
+        
+      - name: "Generate report ${current_date}"
+        run: echo "$current_date"
+        
+      - name: "Generate report '${current_date}'"
+        run: echo wooow
+        
+      - name: "Generate report '$current_date'"
+        run: echo eieie
       
 #       - name: Pip install from requirements.txt file
 #         run: |
@@ -39,17 +51,7 @@ jobs:
 #       - name: Run a script
 #         run: robot -v ENV:staging RF/test_cases
         
-      - name: Generate report $current_date
-        run: echo "${current_date}" && echo $current_date && echo ${current_date}
-        
-      - name: Generate report ${current_date}
-        run: echo hi
-        
-      - name: Generate report '$current_date'
-        run: echo wooow
-        
-      - name: "Generate report '$current_date'"
-        run: echo eieie
+     
           
 #       - name: Generate report
 #         uses: actions/upload-artifact@v2
