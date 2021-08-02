@@ -47,7 +47,7 @@ jobs:
 #         run: robot -v ENV:staging RF/test_cases
         
       - name: echo env
-        run: echo $d100 && echo "${d100}" && echo ${d100}
+        run: echo "${RELEASE_NAME}"
           
 #       - name: Generate report
 #         uses: actions/upload-artifact@v2
