@@ -14,7 +14,6 @@ on:
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-date: "`r format(Sys.time(), '%d %B, %Y')`"
 
 jobs:
   build:
@@ -27,10 +26,6 @@ jobs:
       zip_name2: rf-test-result-"${d2}"
       zip_name3: rf-test-result-"${d3}"
       
-      ppk:  "`r format(Sys.date(), '%d %B, %Y')`"
-      
-      bash: |
-          d100="$(cat date +%Y%m%d_%H%M%S)"
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
