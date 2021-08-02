@@ -39,8 +39,17 @@ jobs:
 #       - name: Run a script
 #         run: robot -v ENV:staging RF/test_cases
         
-      - name: echo env
+      - name: Generate report $current_date
         run: echo "${current_date}" && echo $current_date && echo ${current_date}
+        
+      - name: Generate report ${current_date}
+        run: echo hi
+        
+      - name: Generate report '$current_date'
+        run: echo wooow
+        
+      - name: "Generate report '$current_date'"
+        run: echo eieie
           
 #       - name: Generate report
 #         uses: actions/upload-artifact@v2
