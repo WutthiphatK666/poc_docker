@@ -45,7 +45,7 @@ jobs:
       - name: Generate report
         uses: actions/upload-artifact@v2
         with:
-          name: "${RELEASE_NAME}"
+          name: $RELEASE_NAME
           path: |
             /home/runner/work/poc_docker/poc_docker/output.xml
             /home/runner/work/poc_docker/poc_docker/log.html
