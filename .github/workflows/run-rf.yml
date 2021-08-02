@@ -30,7 +30,7 @@ jobs:
       - name: Test with environment variables
         run: echo $RELEASE_NAME
         env:
-          RELEASE_NAME: rf-test-result-${{ steps.date.outputs.date }}
+          current_date: ${{ steps.date.outputs.date }}
       
       - name: Pip install from requirements.txt file
         run: |
@@ -40,12 +40,12 @@ jobs:
         run: robot -v ENV:staging RF/test_cases
         
       - name: echo env
-        run: echo "${RELEASE_NAME}"
+        run: echo "${current_date}" && echo current_date && echo ${current_date}
           
       - name: Generate report
         uses: actions/upload-artifact@v2
         with:
-          name: $RELEASE_NAME
+          name: "rf-test-result-${current_date}"
           path: |
             /home/runner/work/poc_docker/poc_docker/output.xml
             /home/runner/work/poc_docker/poc_docker/log.html
