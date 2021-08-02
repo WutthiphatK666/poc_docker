@@ -18,6 +18,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      download_filename: rf-test-result-${{ steps.date.outputs.date }}
       
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -33,16 +35,10 @@ jobs:
           CURRENT_DATE: ${{ steps.date.outputs.date }}
           
       - name: Generate report $CURRENT_DATE
-        run: echo "${CURRENT_DATE}"
+        run: echo "${download_filename}"
         
       - name: "Generate report ${CURRENT_DATE}"
-        run: echo "$CURRENT_DATE"
-        
-      - name: "Generate report '${CURRENT_DATE}'"
-        run: echo wooow
-        
-      - name: "Generate report '$CURRENT_DATE'"
-        run: echo eieie
+        run: echo "$download_filename"
       
 #       - name: Pip install from requirements.txt file
 #         run: |
