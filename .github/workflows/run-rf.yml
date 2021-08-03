@@ -27,16 +27,12 @@ jobs:
       
       - name: Get current date
         id: date
-        run: echo "::set-output name=date::$(date +'%Y%m%d_%H%M%S')"
-      - name: "Generate environment variables ${CURRENT_DATE}"
-        run: echo $CURRENT_DATE
-        env:
-          CURRENT_DATE: ${{ steps.date.outputs.date }}
+        run: echo "::set-output name=gen_now::$(date +'%Y%m%d_%H%M%S')"
           
-      - name: rf-test-result-${{ steps.date.outputs.date }}
+      - name: rf-test-result-${{ steps.date.outputs.gen_now }}
         run: echo "${download_filename}"
         
-      - name: "rf-test-result-${{ steps.date.outputs.date }}"
+      - name: "rf-test-result-${{ steps.date.outputs.gen_now }}"
         run: echo "$download_filename"
             
       - name: CURRENT_DATE
