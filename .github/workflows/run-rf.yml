@@ -29,7 +29,7 @@ jobs:
         id: date
         run: echo "::set-output name=gen_now::$(date +'%Y%m%d_%H%M%S')"
           
-      - name: rf-test-result-${{ steps.date.outputs.gen_now }}
+      - name: rf-test-result-${{ steps.date.outputs.date }}
         run: echo "${download_filename}"
         
       - name: "rf-test-result-${{ steps.date.outputs.gen_now }}"
