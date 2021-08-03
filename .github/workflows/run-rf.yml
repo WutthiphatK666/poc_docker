@@ -33,10 +33,10 @@ jobs:
         env:
           CURRENT_DATE: ${{ steps.date.outputs.date }}
           
-      - name: ${{ steps.date.outputs.date }}
+      - name: rf-test-result-${{ steps.date.outputs.date }}
         run: echo "${download_filename}"
         
-      - name: "${{ steps.date.outputs.date }}"
+      - name: "rf-test-result-${{ steps.date.outputs.date }}"
         run: echo "$download_filename"
             
       - name: CURRENT_DATE
