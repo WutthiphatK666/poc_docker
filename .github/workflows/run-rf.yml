@@ -45,7 +45,7 @@ jobs:
       - name: $CURRENT_DATE
         run: echo "$download_filename"
         
-      - name: "${{CURRENT_DATE}}"
+      - name: "${{env.CURRENT_DATE}}"
         run: echo "${download_filename}"
         
       - name: "${CURRENT_DATE}"
